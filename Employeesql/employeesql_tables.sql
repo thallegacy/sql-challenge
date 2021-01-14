@@ -1,10 +1,10 @@
 -- drop tables if necessary
-DROP TABLE IF EXISTS titles;
-DROP TABLE IF EXISTS departments;
-DROP TABLE IF EXISTS employees;
-DROP TABLE IF EXISTS department_employees;
-DROP TABLE IF EXISTS department_managers;
-DROP TABLE IF EXISTS salaries;
+DROP TABLE IF EXISTS titles cascade;
+DROP TABLE IF EXISTS departments cascade;
+DROP TABLE IF EXISTS employees cascade;
+DROP TABLE IF EXISTS department_employees cascade;
+DROP TABLE IF EXISTS department_managers cascade;
+DROP TABLE IF EXISTS salaries cascade;
 
 
 -- create titles table
@@ -53,3 +53,11 @@ CREATE TABLE salaries (
 	salary INTEGER NOT NULL,  
 	FOREIGN KEY (emp_no) REFERENCES employees(emp_no)
 );
+
+-- Check imported data
+SELECT * FROM titles ;
+SELECT * FROM departments ;
+SELECT * FROM employees ;
+SELECT * FROM department_employees ;
+SELECT * FROM department_managers ;
+SELECT * FROM salaries ;
