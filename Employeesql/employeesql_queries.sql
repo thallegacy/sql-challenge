@@ -5,7 +5,8 @@ LEFT JOIN salaries s ON
 e.emp_no = s.emp_no;
 
 -- List first name, last name, and hire date for employees who were hired in 1986
-SELECT first_name, last_name, hire_date from employees
+SELECT first_name, last_name, hire_date 
+FROM employees
 WHERE hire_date >= '1986-01-01'
 AND hire_date <= '1986-12-31';
 
@@ -26,3 +27,9 @@ LEFT JOIN departments d ON
 de.dept_no = d.dept_no
 LEFT JOIN employees e ON
 de.emp_no = e.emp_no;
+
+-- List first name, last name, and sex for employees whose first name is "Hercules" and last names begin with "B."
+SELECT first_name, last_name, sex 
+FROM employees
+WHERE first_name = 'Hercules'
+AND last_name LIKE 'B%';
