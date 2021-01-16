@@ -20,7 +20,7 @@ CREATE TABLE departments (
 );
 
 -- create employees table
-CREATE TABLE Employees (
+CREATE TABLE employees (
     emp_no INT  PRIMARY KEY NOT NULL,
     emp_title_id VARCHAR (20) NOT NULL,
 	birth_date DATE  NOT NULL,
@@ -42,15 +42,15 @@ CREATE TABLE department_employees (
 -- create department_managers table
 CREATE TABLE department_managers (
     dept_no VARCHAR  NOT NULL,
-    emp_no int  NOT NULL,
+    emp_no INT  NOT NULL,
 	FOREIGN KEY (dept_no) REFERENCES departments(dept_no),
 	FOREIGN KEY (emp_no) REFERENCES employees(emp_no)
 );
 
 -- create salaries table
 CREATE TABLE salaries (
-    emp_no int  NOT NULL,
-	salary INTEGER NOT NULL,  
+    emp_no INT  NOT NULL,
+	salary INT NOT NULL,  
 	FOREIGN KEY (emp_no) REFERENCES employees(emp_no)
 );
 
