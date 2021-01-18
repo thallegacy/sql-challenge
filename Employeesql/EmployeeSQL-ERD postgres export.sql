@@ -34,17 +34,26 @@ CREATE TABLE "employees" (
 
 CREATE TABLE "department_employees" (
     "emp_no" INT   NOT NULL,
-    "dept_no" VARCHAR(20)   NOT NULL
+    "dept_no" VARCHAR(20)   NOT NULL,
+    CONSTRAINT "pk_department_employees" PRIMARY KEY (
+        "emp_no","dept_no"
+     )
 );
 
 CREATE TABLE "department_managers" (
     "dept_no" VARCHAR   NOT NULL,
-    "emp_no" INT   NOT NULL
+    "emp_no" INT   NOT NULL,
+    CONSTRAINT "pk_department_managers" PRIMARY KEY (
+        "dept_no","emp_no"
+     )
 );
 
 CREATE TABLE "salaries" (
     "emp_no" INT   NOT NULL,
-    "salary" INT   NOT NULL
+    "salary" INT   NOT NULL,
+    CONSTRAINT "pk_salaries" PRIMARY KEY (
+        "emp_no"
+     )
 );
 
 ALTER TABLE "employees" ADD CONSTRAINT "fk_employees_emp_title_id" FOREIGN KEY("emp_title_id")
